@@ -57,24 +57,27 @@ public class doubleColor : MonoBehaviour {
         if (danger)
         {
             module.HandleStrike();
-            Debug.LogFormat("{Double Color #{0}] Strike! Submit button was pressed when all three lights were on!", _moduleId);
+            Debug.LogFormat("[Double Color #{0}] Strike! Submit button was pressed when all three lights were on!", _moduleId);
 
         }
         else if (time.Contains(correctDidget.ToString()))
         {
             if (stageNumber == 2) { 
-            module.HandlePass();
-            Debug.LogFormat("{Double Color #{0}] Module passed!", _moduleId);
-            newAudio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, submit.transform);
+                module.HandlePass();
+                Debug.LogFormat("[Double Color #{0}] Module passed!", _moduleId);
+                stage2.material = screenOn;
+                newAudio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, submit.transform);
+                _isSolved = true;
             } else
             {
-                Debug.LogFormat("{Double Color #{0}] Stage 1 complete!", _moduleId);
+                Debug.LogFormat("[Double Color #{0}] Stage 1 complete!", _moduleId);
+                newAudio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.CorrectChime, submit.transform);
                 StartCoroutine(passStageOne());
             }
         } else
         {
             module.HandleStrike();
-            Debug.LogFormat("{Double Color #{0}] Strike! Submit button at wrong time! There wasn't a {1} in the bomb timer!", _moduleId, correctDidget);
+            Debug.LogFormat("[Double Color #{0}] Strike! Submit button at wrong time! There wasn't a {1} in the bomb timer!", _moduleId, correctDidget);
         }
 
     }
@@ -394,8 +397,8 @@ public class doubleColor : MonoBehaviour {
 
     private IEnumerator passStageOne()
     {
-        stage1.material = screenOn;
         yield return new WaitForSeconds(2.0f);
+        stage1.material = screenOn;
         stageNumber = 2;
         MainScreenSetup();
         getCorrectDidget();
