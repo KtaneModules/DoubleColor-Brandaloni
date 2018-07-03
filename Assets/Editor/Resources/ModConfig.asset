@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
   m_Name: ModConfig
   m_EditorClassIdentifier: 
-  id: NeedySwitch
-  title: Needy Switch
+  id: doubleColor
+  title: Double Color
   description: do later
-  version: 0.01
+  version: 1.0
   outputFolder: build
   previewImage: {fileID: 0}
