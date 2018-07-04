@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33559499297543188}
   - component: {fileID: 135939341439619256}
   - component: {fileID: 23704555074658246}
+  - component: {fileID: 114312509640355028}
   m_Layer: 0
   m_Name: Sphere_Red
   m_TagString: Untagged
@@ -91,6 +92,7 @@ GameObject:
   - component: {fileID: 33547072498433934}
   - component: {fileID: 135132229309398916}
   - component: {fileID: 23230363436652180}
+  - component: {fileID: 114761628415365958}
   m_Layer: 0
   m_Name: Sphere_Green
   m_TagString: Untagged
@@ -162,6 +164,7 @@ GameObject:
   - component: {fileID: 33044904454642750}
   - component: {fileID: 135302367739090448}
   - component: {fileID: 23625073900094488}
+  - component: {fileID: 114482849325984570}
   m_Layer: 0
   m_Name: Sphere_White
   m_TagString: Untagged
@@ -180,6 +183,7 @@ GameObject:
   - component: {fileID: 33999579702254676}
   - component: {fileID: 135037321842761326}
   - component: {fileID: 23116619552634242}
+  - component: {fileID: 114739406879808814}
   m_Layer: 0
   m_Name: Sphere_Black
   m_TagString: Untagged
@@ -809,7 +813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShaderNames:
-  - KT/Mobile/Diffuse
+  - Mobile/Diffuse
 --- !u!114 &114245366133719642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -832,6 +836,19 @@ MonoBehaviour:
   AllowSelectionWrapY: 0
   ForceSelectionHighlight: 0
   ForceInteractionHighlight: 0
+--- !u!114 &114312509640355028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001853761308910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - Mobile/Diffuse
 --- !u!114 &114393262407042362
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -880,6 +897,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Standard
+--- !u!114 &114482849325984570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824124399825912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - Mobile/Diffuse
 --- !u!114 &114552167218544818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -906,6 +936,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HighlightScale: {x: 1, y: 1, z: 1}
   OutlineAmount: 0
+--- !u!114 &114739406879808814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1861289032252454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - Mobile/Diffuse
 --- !u!114 &114756788981152394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -919,6 +962,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - GUI/KT 3D Text
+--- !u!114 &114761628415365958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1089817499380840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - Mobile/Diffuse
 --- !u!135 &135037321842761326
 SphereCollider:
   m_ObjectHideFlags: 1
