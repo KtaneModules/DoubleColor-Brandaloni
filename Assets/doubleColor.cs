@@ -2,6 +2,8 @@
 using Random = UnityEngine.Random;
 using UnityEngine;
 using System.Collections;
+using System.Text.RegularExpressions;
+using System;
 
 public class doubleColor : MonoBehaviour {
 
@@ -58,7 +60,7 @@ public class doubleColor : MonoBehaviour {
         {
             module.HandleStrike();
             Debug.LogFormat("[Double Color #{0}] Strike! Submit button was pressed when all three lights were on!", _moduleId);
-
+            StartCoroutine(reset());
         }
         else if (time.Contains(correctDidget.ToString()))
         {
@@ -78,6 +80,7 @@ public class doubleColor : MonoBehaviour {
         {
             module.HandleStrike();
             Debug.LogFormat("[Double Color #{0}] Strike! Submit button at wrong time! There wasn't a {1} in the bomb timer!", _moduleId, correctDidget);
+            StartCoroutine(reset());
         }
 
     }
@@ -393,14 +396,48 @@ public class doubleColor : MonoBehaviour {
             danger = true;
             yield return new WaitForSeconds(3.0f);
         }
+        light1.material = screenOff;
+        light2.material = screenOff;
+        light3.material = screenOff;
+        screen.material = screenOff;
+    }
+
+    private IEnumerator reset()
+    {
+        stageNumber = 1;
+        stage1.material = screenOff;
+        screen.material = screenOff;
+        yield return new WaitForSeconds(0.2f);
+        MainScreenSetup();
+        getCorrectDidget();
     }
 
     private IEnumerator passStageOne()
     {
-        yield return new WaitForSeconds(2.0f);
         stage1.material = screenOn;
+        screen.material = screenOff;
+        yield return new WaitForSeconds(0.2f);
         stageNumber = 2;
         MainScreenSetup();
         getCorrectDidget();
+    }
+
+#pragma warning disable 414
+
+    private string TwitchHelpMessage = "Press submit when there is a 7 in any position with !{0} submit at 7";
+
+#pragma warning restore 414
+    IEnumerator ProcessTwitchCommand(string input)
+    {
+        Regex rgx = new Regex(@"^(press|submit) (at|on|with) [0-9]$");
+        if (rgx.IsMatch(input))
+        {
+            string[] split = input.ToLowerInvariant().Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            yield return null;
+
+            while (!info.GetFormattedTime().Contains(split[2]) || danger) yield return "trycancel Submit wasn't pressed due to either danger or no number.";
+
+            handleSubmit();
+        }
     }
 }
