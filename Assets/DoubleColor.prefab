@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4616739790575922}
   - component: {fileID: 23946269455707474}
   - component: {fileID: 102389282817349284}
-  - component: {fileID: 114494411284985240}
+  - component: {fileID: 114068383570200976}
   m_Layer: 0
   m_Name: SubmitText
   m_TagString: Untagged
@@ -484,8 +484,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1016286269770018}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.426, y: 0.59, z: 0.223}
-  m_LocalScale: {x: 0.04, y: 0.07, z: 0.15}
+  m_LocalPosition: {x: -0.426, y: 0.55, z: 0.931}
+  m_LocalScale: {x: 0.023, y: 0.06, z: 0.15}
   m_Children: []
   m_Father: {fileID: 4759922315745590}
   m_RootOrder: 0
@@ -923,7 +923,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  - {fileID: 2100000, guid: 8d0a03748489206499d4314928e771f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1219,7 +1219,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+  m_Font: {fileID: 12800000, guid: 3d2e2ed63c7a0ed4cb4a7a6d1661e19e, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
@@ -1251,6 +1251,19 @@ MonoBehaviour:
   screenPink: {fileID: 2100000, guid: f5a78335df91055409c7dc34d589c6b5, type: 2}
   screenGreen: {fileID: 2100000, guid: 9b1bc94db93c2944388d0da7b4d835c9, type: 2}
   screenYellow: {fileID: 2100000, guid: b021b90db10ecfc40a6b4a9940339c2f, type: 2}
+--- !u!114 &114068383570200976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1016286269770018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShaderNames:
+  - GUI/KT 3D Text
 --- !u!114 &114092361559487472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1397,19 +1410,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShaderNames:
   - Unlit/Color
---- !u!114 &114494411284985240
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1016286269770018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1005838349, guid: 45b809be76fd7a3468b6f517bced6f28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShaderNames:
-  - GUI/Text Shader
 --- !u!114 &114533095358843850
 MonoBehaviour:
   m_ObjectHideFlags: 1

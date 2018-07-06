@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Font Material
-  m_Shader: {fileID: 4800000, guid: b06245edaef1e84499b58b4303444667, type: 3}
+  m_Name: TextMat
+  m_Shader: {fileID: 4800000, guid: 306ffc165961a2c40806bad3bb861c43, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1ebe1d96973a920409b439b3a0e2bb63, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d2e2ed63c7a0ed4cb4a7a6d1661e19e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
