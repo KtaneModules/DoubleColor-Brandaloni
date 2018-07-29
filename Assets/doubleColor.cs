@@ -14,6 +14,11 @@ public class doubleColor : MonoBehaviour {
     private int _moduleId = 0;
     private bool _isSolved = false, _lightsOn = false;
 
+    public GameObject colorblindObj;
+    public TextMesh colorblindText;
+
+    private Color red = new Color(255, 0, 0), green = new Color(0, 255, 0), blue = new Color(0, 0, 255), yellow = new Color(255, 255, 0), pink = new Color(255,0,255);
+
     public KMSelectable submit;
 
     public MeshRenderer light1, light2, light3, screen, stage1, stage2;
@@ -358,24 +363,43 @@ public class doubleColor : MonoBehaviour {
             case 0:
                 screen.material = screenGreen;
                 Debug.LogFormat("[Double Color #{0}] Screen Color for Stage {1}: Green", _moduleId, stageNumber);
+                colorblindText.text = "G";
+                colorblindText.color = green;
                 break;
             case 1:
                 screen.material = screenBlue;
                 Debug.LogFormat("[Double Color #{0}] Screen Color for Stage {1}: Blue", _moduleId, stageNumber);
+                colorblindText.text = "B";
+                colorblindText.color = blue;
                 break;
             case 2:
                 screen.material = screenRed;
                 Debug.LogFormat("[Double Color #{0}] Screen Color for Stage {1}: Red", _moduleId, stageNumber);
+                colorblindText.text = "R";
+                colorblindText.color = red;
                 break;
             case 3:
                 screen.material = screenPink;
                 Debug.LogFormat("[Double Color #{0}] Screen Color for Stage {1}: Pink", _moduleId, stageNumber);
+                colorblindText.text = "P";
+                colorblindText.color = pink;
                 break;
             case 4:
                 screen.material = screenYellow;
                 Debug.LogFormat("[Double Color #{0}] Screen Color for Stage {1}: Yellow", _moduleId, stageNumber);
+                colorblindText.text = "Y";
+                colorblindText.color = yellow;
                 break;
 
+        }
+        if (GetComponent<KMColorblindMode>().ColorblindModeActive)
+        {
+            colorblindObj.SetActive(true);
+            screen.material = screenOff;
+            Debug.LogFormat("[Double Color #{0}] Colorblind mode enabled.", _moduleId);
+        } else
+        {
+            colorblindObj.SetActive(false);
         }
     }
 
@@ -400,6 +424,7 @@ public class doubleColor : MonoBehaviour {
         light2.material = screenOff;
         light3.material = screenOff;
         screen.material = screenOff;
+        colorblindObj.SetActive(false);
     }
 
     private IEnumerator reset()
@@ -407,6 +432,7 @@ public class doubleColor : MonoBehaviour {
         stageNumber = 1;
         stage1.material = screenOff;
         screen.material = screenOff;
+        colorblindObj.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         MainScreenSetup();
         getCorrectDidget();
@@ -416,6 +442,7 @@ public class doubleColor : MonoBehaviour {
     {
         stage1.material = screenOn;
         screen.material = screenOff;
+        colorblindObj.SetActive(false);
         yield return new WaitForSeconds(0.2f);
         stageNumber = 2;
         MainScreenSetup();
