@@ -23,7 +23,7 @@ public class doubleColor : MonoBehaviour {
 
     public MeshRenderer light1, light2, light3, screen, stage1, stage2;
 
-    private bool danger = false;
+    private bool danger = false, manualColorblind = false;
 
     private int stageNumber = 1;
 
@@ -392,7 +392,7 @@ public class doubleColor : MonoBehaviour {
                 break;
 
         }
-        if (GetComponent<KMColorblindMode>().ColorblindModeActive)
+        if (GetComponent<KMColorblindMode>().ColorblindModeActive || manualColorblind)
         {
             colorblindObj.SetActive(true);
             screen.material = screenOff;
@@ -465,6 +465,14 @@ public class doubleColor : MonoBehaviour {
             while (!info.GetFormattedTime().Contains(split[2]) || danger) yield return "trycancel Submit wasn't pressed due to either danger or no number.";
 
             handleSubmit();
+        } else if (input.ToLowerInvariant().Equals("colorblind"))
+        {
+            yield return null;
+            colorblindObj.SetActive(true);
+            screen.material = screenOff;
+            Debug.LogFormat("[Double Color #{0}] Colorblind mode enabled via TP.", _moduleId);
+            manualColorblind = true;
+            yield break;
         }
     }
 }
