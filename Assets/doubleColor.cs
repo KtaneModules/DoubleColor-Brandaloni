@@ -451,7 +451,7 @@ public class doubleColor : MonoBehaviour {
 
 #pragma warning disable 414
 
-    private string TwitchHelpMessage = "Press submit when there is a 7 in any position with !{0} submit at 7";
+    private string TwitchHelpMessage = "Press submit when there is a 7 in any position with !{0} submit at 7. Use !{0} colorblind to turn on colorblind mode.";
 
 #pragma warning restore 414
     IEnumerator ProcessTwitchCommand(string input)
