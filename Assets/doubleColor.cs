@@ -403,22 +403,23 @@ public class doubleColor : MonoBehaviour {
         }
     }
 
-    private IEnumerator Lights()
-    {
-        while (!_isSolved)
-        {
+    private IEnumerator Lights() {
+        while (!_isSolved) {
+            var time1 = info.GetStrikes() >= 4 ? 2.4f / 2.0f : info.GetStrikes() == 3 ? 2.4f / 1.75f : info.GetStrikes() == 2 ? 2.4f / 1.5f : info.GetStrikes() == 1 ? 2.4f / 1.25f : 2.4f;
+            var time2 = info.GetStrikes() >= 4 ? 0.5f / 2.0f : info.GetStrikes() == 3 ? 0.5f / 1.75f : info.GetStrikes() == 2 ? 0.5f / 1.5f : info.GetStrikes() == 1 ? 0.5f / 1.25f : 0.5f;
+            var time3 = info.GetStrikes() >= 4 ? 3.0f / 2.0f : info.GetStrikes() == 3 ? 3.0f / 1.75f : info.GetStrikes() == 2 ? 3.0f / 1.5f : info.GetStrikes() == 1 ? 3.0f / 1.25f : 3.0f;
             danger = false;
             light1.material = screenOff;
             light2.material = screenOff;
             light3.material = screenOff;
-            yield return new WaitForSeconds(2.4f);
+            yield return new WaitForSeconds(time1);
             light1.material = screenRed;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(time2);
             light2.material = screenRed;
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(time2);
             light3.material = screenRed;
             danger = true;
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(time3);
         }
         light1.material = screenOff;
         light2.material = screenOff;
