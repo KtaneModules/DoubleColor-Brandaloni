@@ -29,7 +29,7 @@ public class doubleColor : MonoBehaviour {
 
     private int screenColor; //0=green, 1=blue, 2=red, 3=pink, 4=yellow
 
-    private int correctDidget;
+    private int correctDigit;
 
     public Material screenOff, screenOn, screenRed, screenBlue, screenPink, screenGreen, screenYellow;
 
@@ -67,7 +67,7 @@ public class doubleColor : MonoBehaviour {
             Debug.LogFormat("[Double Color #{0}] Strike! Submit button was pressed when all three lights were on!", _moduleId);
             StartCoroutine(reset());
         }
-        else if (time.Contains(correctDidget.ToString()))
+        else if (time.Contains(correctDigit.ToString()))
         {
             if (stageNumber == 2) { 
                 module.HandlePass();
@@ -84,7 +84,7 @@ public class doubleColor : MonoBehaviour {
         } else
         {
             module.HandleStrike();
-            Debug.LogFormat("[Double Color #{0}] Strike! Submit button at wrong time! There wasn't a {1} in the bomb timer!", _moduleId, correctDidget);
+            Debug.LogFormat("[Double Color #{0}] Strike! Submit button at wrong time! There wasn't a {1} in the bomb timer!", _moduleId, correctDigit);
             StartCoroutine(reset());
         }
 
@@ -107,19 +107,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                         case 1:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                         case 2:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 3:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 4:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                     }
                     break;
@@ -127,19 +127,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                         case 1:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                         case 2:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                         case 3:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                         case 4:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                     }
                     break;
@@ -147,19 +147,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                         case 1:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 2:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                         case 3:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                         case 4:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                     }
                     break;
@@ -167,19 +167,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                         case 1:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 2:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                         case 3:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                         case 4:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                     }
                     break;
@@ -187,19 +187,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                         case 1:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                         case 2:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                         case 3:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                         case 4:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                     }
                     break;
@@ -207,19 +207,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                         case 1:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                         case 2:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 3:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 4:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                     }
                     break;
@@ -234,19 +234,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                         case 1:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                         case 2:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                         case 3:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 4:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                     }
                     break;
@@ -254,19 +254,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                         case 1:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 2:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 3:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                         case 4:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                     }
                     break;
@@ -274,19 +274,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                         case 1:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                         case 2:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                         case 3:
-                            correctDidget = 9;
+                            correctDigit = 9;
                             break;
                         case 4:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                     }
                     break;
@@ -294,19 +294,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                         case 1:
-                            correctDidget = 2;
+                            correctDigit = 2;
                             break;
                         case 2:
-                            correctDidget = 0;
+                            correctDigit = 0;
                             break;
                         case 3:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 4:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                     }
                     break;
@@ -314,19 +314,19 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 6;
+                            correctDigit = 6;
                             break;
                         case 1:
-                            correctDidget = 8;
+                            correctDigit = 8;
                             break;
                         case 2:
-                            correctDidget = 4;
+                            correctDigit = 4;
                             break;
                         case 3:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                         case 4:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                     }
                     break;
@@ -334,25 +334,25 @@ public class doubleColor : MonoBehaviour {
                     switch (screenColor)
                     {
                         case 0:
-                            correctDidget = 1;
+                            correctDigit = 1;
                             break;
                         case 1:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                         case 2:
-                            correctDidget = 7;
+                            correctDigit = 7;
                             break;
                         case 3:
-                            correctDidget = 3;
+                            correctDigit = 3;
                             break;
                         case 4:
-                            correctDidget = 5;
+                            correctDigit = 5;
                             break;
                     }
                     break;
             }
         }
-        Debug.LogFormat("[Double Color #{0}] Correct didget for Stage {1}: {2}", _moduleId, stageNumber, correctDidget);
+        Debug.LogFormat("[Double Color #{0}] Correct digit for Stage {1}: {2}", _moduleId, stageNumber, correctDigit);
     }
 
     void MainScreenSetup()
